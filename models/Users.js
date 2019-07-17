@@ -3,20 +3,12 @@ const Schema = mongoose.Schema;
 
 // User Schema
 const UserSchema = new Schema({
-    googleID: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    firstName: {
-        type: String
-    },
-    lastName: {
-        type: String
-    }, 
+    linkedinID: String,
+    facebookID: String,
+    githubID: String,
+    googleID: String,
+    email: String,
+    name: String, 
     image: {
         type: String
     }

@@ -10,10 +10,10 @@ main {
 
 @media(max-width: 40rem) {
     .side-nav {
-        width: 80%;
+        width: 90%;
     }
     .btn{
-        width: 100%;
+        width: 95%;
     }
 }
 

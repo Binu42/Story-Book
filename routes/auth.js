@@ -13,10 +13,39 @@ router.get('/google/callback', passport.authenticate('google', {
         res.redirect('/dashboard');
     })
 
+router.get('/facebook', passport.authenticate('facebook'));
+router.get('/facebook/callback', passport.authenticate('google', {
+        failureRedirect: '/'
+    }),
+    function (req, res) {
+        res.redirect('/dashboard');
+    })
+
+
+router.get('/github', passport.authenticate('github'));
+router.get('/github/callback',
+    passport.authenticate('github', {
+        failureRedirect: '/'
+    }),
+    function (req, res) {
+        res.redirect('/dashboard');
+    });
+
+router.get('/linkedin',
+    passport.authenticate('linkedin'),
+    function (req, res) {
+    });
+
+// router to receive request from linkedin
+router.get('/linkedin/callback', passport.authenticate('linkedin', {
+    successRedirect: '/dashboard', // successful authentication, redirect to secrets.
+    failureRedirect: '/' // else redirect login
+}));
+
 router.get('/verify', (req, res) => {
-    if(req.user){
+    if (req.user) {
         console.log(req.user);
-    }else{
+    } else {
         console.log('Not auth');
     }
 })

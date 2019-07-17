@@ -22,13 +22,13 @@
           <a class="btn red darken-1" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
         </li>
         <li>
-          <a class="btn blue darken-3" href="/auth/google"><i class="fa fa-facebook"></i> Login With Facebook</a>
+          <a class="btn blue darken-3" href="/auth/facebook"><i class="fa fa-facebook"></i> Login With Facebook</a>
         </li>
         <li>
-          <a class="btn  cyan lighten-2" href="/auth/google"><i class="fa fa-linkedin"></i> Login With Linkedin</a>
+          <a class="btn  cyan lighten-2" href="/auth/linkedin"><i class="fa fa-linkedin"></i> Login With Linkedin</a>
         </li>
         <li>
-          <a class="btn grey darken-4" href="/auth/google"><i class="fa fa-github"></i> Login With Github</a>
+          <a class="btn grey darken-4" href="/auth/github"><i class="fa fa-github"></i> Login With Github</a>
         </li>
         {{/if}}
         {{#if user}}
@@ -38,7 +38,7 @@
               <img src="/images/image5.jpg">
             </div>
             <a href="#"><img class="circle" src="{{user.image}}"></a>
-            <a href="#"><span class="white-text name">{{user.firstName}}</span></a>
+            <a href="#"><span class="white-text name">{{user.name}}</span></a>
             <a href="#"><span class="white-text email">{{user.email}}</span></a>
           </div>
         </li>
