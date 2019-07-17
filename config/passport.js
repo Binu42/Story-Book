@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 
 const keys = require('./keys');
 
-module.exports = function(passport){
+// User model
+const User = mongoose.model('users');
+
+module.exports = function (passport) {
     passport.use(
         new GoogleStrategy({
             clientID: keys.googleClientID,
@@ -11,8 +14,38 @@ module.exports = function(passport){
             callbackURL: '/auth/google/callback',
             proxy: true
         }, (accessToken, refreshToken, profile, done) => {
-            console.log(accessToken);
-            console.log(profile);
+            // console.log(accessToken);
+            // console.log(profile);
+            const newUser = {
+                googleID: profile.id,
+                firstName: profile.name.givenName,
+                lastName: profile.name.familyName,
+                email: profile.emails[0].value,
+                image: profile.photos[0].value
+            }
+
+            User.findOne({
+                googleID: profile.id
+            }).then(user => {
+                if(user){
+                    done(null, user)
+                }else{
+                    // Create user
+                    new User(newUser)
+                    .save()
+                    .then(user => done(null, user));
+                }
+            })
         })
     )
+
+    passport.serializeUser((user, done) => {
+        done(null, user.id);
+    })
+
+    passport.deserializeUser(function (id, done) {
+        User.findById(id, function (err, user) {
+          done(err, user);
+        });
+      });
 }

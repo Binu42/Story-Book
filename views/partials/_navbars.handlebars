@@ -1,0 +1,55 @@
+<nav class="teal lighten-3">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" data-activates="main-menu" class="button-collapse show-on-large" style="width: 50px"><i
+          class="fa fa-bars fa-2x"></i></a>
+      <a href="/" class="brand-logo center">Story Books</a>
+
+      <!-- RIGHT NAV -->
+      <ul class="right hide-on-small-only">
+        {{#if user}}
+        <li><a href="/dashboard">Welcome {{user.firstName}}</a></li>
+        <li><a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+        {{else}}
+        <li><a href="/stories"><i class="fa fa-book"></i> Public Stories</a></li>
+        {{/if}}
+      </ul>
+      <!-- SIDE MENU -->
+      <ul class="side-nav" id="main-menu">
+        {{#if user}}
+        {{else}}
+        <li>
+          <a class="btn red darken-1" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
+        </li>
+        <li>
+          <a class="btn blue darken-3" href="/auth/google"><i class="fa fa-facebook"></i> Login With Facebook</a>
+        </li>
+        <li>
+          <a class="btn  cyan lighten-2" href="/auth/google"><i class="fa fa-linkedin"></i> Login With Linkedin</a>
+        </li>
+        <li>
+          <a class="btn grey darken-4" href="/auth/google"><i class="fa fa-github"></i> Login With Github</a>
+        </li>
+        {{/if}}
+        {{#if user}}
+        <li>
+          <div class="user-view">
+            <div class="background sideNavImg">
+              <img src="/images/image5.jpg">
+            </div>
+            <a href="#"><img class="circle" src="{{user.image}}"></a>
+            <a href="#"><span class="white-text name">{{user.firstName}}</span></a>
+            <a href="#"><span class="white-text email">{{user.email}}</span></a>
+          </div>
+        </li>
+        <li><a href="/dashboard"><i class="fa fa-cog"></i> Dashboard</a></li>
+        <li><a href="/stories/my"><i class="fa fa-user"></i> My Stories</a></li>
+        <li><a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+        {{/if}}
+        <li class="divider"></li>
+        <li><a href="/stories"><i class="fa fa-book"></i> Public Stories</a></li>
+        <li><a href="/about"><i class="fa fa-address-book" aria-hidden="true"></i> About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

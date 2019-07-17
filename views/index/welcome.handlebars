@@ -1,0 +1,21 @@
+<h1>Welcome</h1>
+<p>Welcome to StoryBooks 1.0.0</p>
+<p>Post stories from the best and worst of your life and choose for them to be read by the world or completley private
+  as your own personal diary</p>
+{{#if user}}
+{{else}}
+<div class="row">
+  <div class="col m5 s12 margin-login">
+    <a class="btn red darken-4" href="/auth/google"><i class="fa fa-google left"></i> Login With Google</a>
+  </div>
+  <div class="col m5 s12 margin-login">
+    <a class="btn  cyan lighten-2" href="/auth/google"><i class="fa fa-linkedin left"></i> Login With Linkedin</a>
+  </div>
+  <div class="col m5 s12 margin-login">
+    <a class="btn grey darken-4" href="/auth/google"><i class="fa fa-github left"></i> Login With Github</a>
+  </div>
+  <div class="col m5 s12 margin-login">
+    <a class="btn blue darken-3" href="/auth/google"><i class="fa fa-facebook left"></i> Login With Facebook</a>
+  </div>
+</div>
+{{/if}}

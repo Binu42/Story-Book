@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+@media(max-width: 40rem) {
+    .side-nav {
+        width: 80%;
+    }
+    .btn{
+        width: 100%;
+    }
+}
+
+.side-nav li>a>i{
+    margin-right: 5px;
+}
+
+.sideNavImg {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+}
+
+i{
+    color: black;
+}
+
+.fa-facebook-official{
+    color: #1100ff;
+}
+
+.fa-linkedin{
+    color: #00ffea;
+}
+
+.fa-github{
+    color: #fbfbfb;
+}
+
+.fa-instagram{
+    color: #fd4902;
+}
+
+.fa-git-square{
+    color: #ffffff;
+}
+
+.footer-icon a{
+    margin-right: 40px;
+}
+
+.margin-login{
+    margin: 20px;
+}
