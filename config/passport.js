@@ -54,10 +54,29 @@ module.exports = function (passport) {
     passport.use(new FacebookStrategy({
             clientID: keys.facebook_App_ID,
             clientSecret: keys.facebook_App_Secret,
-            callbackURL: "/auth/facebook/callback"
+            callbackURL: "/auth/facebook/callback",
+            profileFields: ['id', 'displayName', 'gender', 'photos', 'emails']
         },
         function (accessToken, refreshToken, profile, cb) {
             console.log(profile);
+            const newUser = {
+                facebookID: profile.id,
+                name: profile.displayName,
+                image: profile.photos[0].value
+            }
+
+            User.findOne({
+                facebookID: profile.id
+            }).then(user => {
+                if (user) {
+                    cb(null, user)
+                } else {
+                    // Create user
+                    new User(newUser)
+                        .save()
+                        .then(user => cb(null, user));
+                }
+            })
         }
     ));
 

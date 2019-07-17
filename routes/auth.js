@@ -14,7 +14,7 @@ router.get('/google/callback', passport.authenticate('google', {
     })
 
 router.get('/facebook', passport.authenticate('facebook'));
-router.get('/facebook/callback', passport.authenticate('google', {
+router.get('/facebook/callback', passport.authenticate('facebook', {
         failureRedirect: '/'
     }),
     function (req, res) {
@@ -33,8 +33,7 @@ router.get('/github/callback',
 
 router.get('/linkedin',
     passport.authenticate('linkedin'),
-    function (req, res) {
-    });
+    function (req, res) {});
 
 // router to receive request from linkedin
 router.get('/linkedin/callback', passport.authenticate('linkedin', {
