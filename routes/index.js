@@ -14,4 +14,8 @@ router.get('/about', (req, res) => {
     res.render('index/about');
 })
 
+router.get('/privacy', (req, res) => {
+    res.render('index/privacy');
+})
+
 module.exports = router;
