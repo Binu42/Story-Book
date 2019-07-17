@@ -54,7 +54,7 @@ module.exports = function (passport) {
     passport.use(new FacebookStrategy({
             clientID: keys.facebook_App_ID,
             clientSecret: keys.facebook_App_Secret,
-            callbackURL: "/auth/facebook/callback",
+            callbackURL: "https://storiesbooks.herokuapp.com/auth/facebook/callback",
             profileFields: ['id', 'displayName', 'gender', 'photos', 'emails']
         },
         function (accessToken, refreshToken, profile, cb) {
