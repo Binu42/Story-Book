@@ -10,10 +10,13 @@ main {
 
 @media(max-width: 40rem) {
     .side-nav {
-        width: 90%;
+        width: 80%;
     }
     .btn{
-        width: 95%;
+        width: 92%;
+    }
+    .side-nav li>a{
+        padding: 0 10px;
     }
 }
 
