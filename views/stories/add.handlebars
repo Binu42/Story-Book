@@ -1,34 +1,35 @@
 <h1>Add Story</h1>
 <div class="row">
     <form action="/stories" method="post" class="col s12">
-    <div class="row">
-        <div class="input-field">
-            <input type="text" name="title" id="title">
-            <label for="title">Story Name</label>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" name="title" id="title">
+                <label for="title">Story Name</label>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="input-field">
-            <select name="status" id="">
-                <option value="public" selected></option>
-                <option value="private"></option>
-                <option value="unpublished"></option>
-            </select>
-            <label for="title">Status</label>
+        <div class="row text-grey">
+            <div class="input-field">
+                <select name="status" id="status">
+                    <option value="public" selected>public</option>
+                    <option value="private">private</option>
+                    <option value="unpublished">unpublished</option>
+                </select>
+                <label for="status">Status</label>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <p>
-            <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" checked='checked'>
-            <label for="allowComments"></label>
-        </p>
-    </div>
-    <div class="row">
-        <div class="input-field">
-            <h5>Type Story</h5>
-            <textarea name="body" id=""></textarea>
+        <div class="row">
+            <p>
+                <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" checked='checked'>
+                <label for="filled-in-box">Allow Comments</label>
+            </p>
         </div>
-    </div>
+        <div class="row">
+            <div class="input-field">
+                <h5>Type Story</h5>
+                <textarea name="body" id="body"></textarea>
+            </div>
+        </div>
+        <input type="submit" value="save" class="btn">
     </form>
 </div>
