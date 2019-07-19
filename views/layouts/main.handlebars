@@ -10,6 +10,7 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="shortcut icon" href="/images/favicon.jpeg" type="image/x-icon">
   <title>StoryBooks</title>
 </head>
 
@@ -20,6 +21,7 @@
   {{/if}}
   <main>
     <div class="container">
+      {{> _flash}}
       {{{body}}}
     </div>
   </main>
@@ -34,6 +36,7 @@
       $('.button-collapse').sideNav();
     });
   </script>
+  <script src="/js/index.js"></script>
 </body>
 
 </html>

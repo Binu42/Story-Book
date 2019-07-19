@@ -3,6 +3,7 @@ module.exports = {
         if(req.isAuthenticated()){
             return next();
         }
+        req.flash('error_msg', 'Login Now! Not Authorized');
         res.redirect('/');
     }, 
     ensureguest: function(req, res, next){

@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+var flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const session = require('express-session');
@@ -46,8 +47,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set global vars
+app.use(flash());
+// global vars for flash and checking user is login or not
 app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
     res.locals.user = req.user || null;
     next();
 });
