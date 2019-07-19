@@ -78,7 +78,7 @@ router.get('/edit/:id', (req, res) => {
         })
         .then(story => {
             res.render('stories/edit', {
-                story: story
+                Story: story
             });
         })
 })
