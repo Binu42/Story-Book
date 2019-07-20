@@ -12,12 +12,10 @@ main {
     flex: 1 0 auto;
 }
 
-img{
-    width: 300px !important;
-    height: 300px !important;
-    background-size: cover;
-    background-position: center;
-}
+img {
+    max-width: 90%;
+    max-height: 100%;
+  }
 
 @media(max-width: 40rem) {
     .side-nav {
