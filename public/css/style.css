@@ -12,6 +12,12 @@ main {
     flex: 1 0 auto;
 }
 
+img{
+
+    background-size: cover;
+    background-position: center;
+}
+
 @media(max-width: 40rem) {
     .side-nav {
         width: 80%;
