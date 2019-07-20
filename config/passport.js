@@ -56,13 +56,12 @@ module.exports = function (passport) {
             clientID: keys.facebook_App_ID,
             clientSecret: keys.facebook_App_Secret,
             callbackURL: "https://storiesbooks.herokuapp.com/auth/facebook/callback",
-            profileFields: ['id', 'displayName', 'gender', 'photos', 'emails']
+            profileFields: ['id', 'displayName', 'gender', 'photos', 'emails', 'picture.type(large)']
         },
         function (accessToken, refreshToken, profile, cb) {
             const newUser = {
                 facebookID: profile.id,
                 name: profile.displayName,
-                email: profile.emails[0].value,
                 image: profile.photos[0].value
             }
 
