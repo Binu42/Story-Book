@@ -53,9 +53,8 @@ img {
     color: #00ffdd;
 }
 
-.sideNavImg {
-    height: 100%;
-    width: 100%;
+.sideNavImg img{
+    max-width: 100%;
     background-position: center;
     background-size: cover;
 }
