@@ -8,8 +8,9 @@ router.get('/', ensureguest, (req, res) => {
     res.render('index/welcome');
 })
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', ensureAuthenticated, (req, res) => {
     Story.find({user: req.user.id})
+    .sort({date: 'desc'})
     .then(stories => {
         res.render('index/dashboard', {
             stories: stories

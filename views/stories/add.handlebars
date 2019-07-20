@@ -1,9 +1,9 @@
 <h1>Add Story</h1>
 <div class="row">
-    <form action="/stories" method="post" class="col s12">
+    <form action="/stories" method="post" class="col s12" id="edit-form">
         <div class="row">
             <div class="input-field">
-                <input type="text" name="title" id="title">
+                <input type="text" name="title" id="title" class="validate" required>
                 <label for="title">Story Name</label>
             </div>
         </div>

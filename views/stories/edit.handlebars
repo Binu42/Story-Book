@@ -1,10 +1,10 @@
 <h1>Edit Story</h1>
 <div class="row">
-    <form action="/stories/{{id}}?_method=PUT" method="post" class="col s12">
+    <form action="/stories/{{Story.id}}?_method=PUT" method="post" class="col s12" id="edit-form">
     <input type="hidden" name="_method" value="PUT">
         <div class="row">
             <div class="input-field">
-                <input type="text" name="title" id="title" value="{{title}}">
+                <input type="text" name="title" id="title" value="{{Story.name}}" required class="validate">
                 <label for="title">Story Name</label>
             </div>
         </div>
@@ -12,7 +12,7 @@
         <div class="row text-grey">
             <div class="input-field">
                 <select name="status" id="status">
-                    {{#select status}}
+                    {{#select Story.status}}
                     <option value="public" selected>public</option>
                     <option value="private">private</option>
                     <option value="unpublished">unpublished</option>
@@ -23,14 +23,14 @@
         </div>
         <div class="row">
             <p>
-                <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" {{#if allowComments}} checked='checked' {{/if}}>
+                <input type="checkbox" name="allowComments" class="filled-in" id="filled-in-box" {{#if Story.allowComments}} checked='checked' {{/if}}>
                 <label for="filled-in-box">Allow Comments</label>
             </p>
         </div>
         <div class="row">
             <div class="input-field">
                 <h5>Type Story</h5>
-                <textarea name="body" id="body">{{body}}</textarea>
+                <textarea name="body" id="body">{{{Story.body}}}</textarea>
             </div>
         </div>
         <input type="submit" value="save" class="btn">

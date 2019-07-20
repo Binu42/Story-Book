@@ -21,6 +21,7 @@ module.exports = function (passport) {
         });
     });
 
+    // https://storiesbooks.herokuapp.com
     passport.use(
         new GoogleStrategy({
             clientID: keys.googleClientID,

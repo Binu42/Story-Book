@@ -1,22 +1,65 @@
 <div class="row">
+    <h3 class="center">{{story.name}}</h3>
     <div class="col s12 m8">
-        <h3 class="center">{{name}}</h3>
         <div class="card story">
+            <div class="card-image center">{{{editIcon story.user.id user.id story.id false}}}</div>
             <div class="card-content">
-                <span class="card-title">{{formatDate date 'MMMM Do YYYY'}}</span>
-                <h5>{{{body}}}</h5>
+                <span class="card-title">{{formatDate story.date 'MMMM Do YYYY'}}</span>
+                <h5>{{{story.body}}}</h5>
             </div>
         </div>
+        {{#if story.allowComments}}
+        <div class="card">
+            <div class="card-content">
+                <div class="card-title">Comments</div>
+                {{#if user}}
+                <form action="/stories/comment/{{story.id}}" method="post" id="comment-form">
+                    <div class="input-field">
+                        <textarea name="commentBody" id="comment" class="materialize-textarea" class="validate"
+                            required></textarea>
+                        <label for="comment">Type Here Your comment</label>
+                    </div>
+                    <input type="submit" value="Submit" class="btn">
+                </form>
+                {{else}}
+                <p>Please <a href="/">Log in</a> to add comments.</p>
+                {{/if}}
+            </div>
+
+            {{#each story.comments}}
+            <div class="card">
+                <div class="card-content">
+                    <h5>{{commentBody}}</h5>
+                    <a href="/stories/user/{{commentUser.id}}">
+                        <div class="chip center">
+                            <img src="{{commentUser.image}}" alt="user image">
+                            {{commentUser.name}}
+                        </div>
+                    </a>
+                    <br>
+                    <small>posted{{admin commentUser.id ../story.user.id}}:
+                        {{formatDate commentDate 'MMMM Do YYYY'}}</small>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{else}}
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">Comment is disabled on this Story.</div>
+                </div>
+            </div>
+        {{/if}}
     </div>
     <div class="col s12 m4">
         <div class="card center-align">
             <div class="card-content">
-                <span class="card-title">{{user.name}}</span>
-                <img src="{{user.image}}" class="circle responsive-img" alt="">
+                <span class="card-title">{{story.user.name}}</span>
+                <img src="{{story.user.image}}" class="circle responsive-img custom-img" alt="">
             </div>
             <div class="card-action">
-                <a href="/stories/user/{{user.id}}">More from 
-                {{user.name}}</a>
+                <a href="/stories/user/{{story.user.id}}">More from
+                    {{story.user.name}}</a>
             </div>
         </div>
     </div>

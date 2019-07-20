@@ -1,34 +1,30 @@
-<h1>Welcome {{user.name}}</h1>
-<h4>Your Stories</h4>
+<h1 class="center-align">Welcome {{user.name}}</h1>
+<h4 class="center-align">Your Stories</h4>
 {{#if stories}}
-<table class="striped">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each stories}}
-        <tr>
-            <td><a href="/stories/show/{{id}}"> {{title}}</a></td>
-            <td>{{formatDate date 'MMMM do YYYY'}}
-            </td>
-            <td><span class='dash-status'>{{status}}</span></td>
-            <td><a href="/stories/edit/{{id}}" class="btn left-align"><i class="fa fa-pencil" aria-hidden="true"></i>
-                    Edit</a></td>
-            <td>
+<div class="row">
+    {{#each stories}}
+    <div class="col m6 s12 l4">
+        <div class="card">
+            <div class="card-title center-align">
+                <p class="user-story--title"><a href="/stories/show/{{id}}"> {{truncate name 50}}</a></p>
+            </div>
+            <div class="card-content center-align">
+                <span>comment allowance:- {{allowComments}}</span><br>
+                <span class='dash-status'>Status:- {{status}}</span><br>
+                <small>{{formatDate date 'MMMM do YYYY'}}</small>
+            </div>
+            <div class="card-action center-align">
+                <a href="/stories/edit/{{id}}" class="btn left-align"><i class="fa fa-pencil" aria-hidden="true"></i>
+                    Edit</a>
                 <form action="/stories/{{id}}?_method=DELETE" method="post" id="delete-form">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="btn red"><i class="fa fa-remove"></i>Delete</button>
                 </form>
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
 {{else}}
 <p>You have not created any stories yet.</p>
 {{/if}}

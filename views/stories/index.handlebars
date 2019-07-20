@@ -1,19 +1,21 @@
-<h1>Stories</h1>
+<h1 class="center-align">Stories</h1>
 <div class="row">
     {{#each Stories}}
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4">
             <div class="card">
                 <div class="card-image">
-                    <a href="/stories/edit/{{id}}" class="btn-floating halfway-fab red"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    {{{editIcon user.id ../user.id id}}}
                 </div>
                 <div class="card-content center-align">
-                    <h5>{{name}}</h5>
-                    <p>{{stripTags (truncate body)}}</p>
+                    <h5 class="story-header">{{truncate name 40}}</h5>
+                    <p class="story-body">{{stripTags (truncate body 150)}}</p>
                     <br>
+                    <a href="/stories/user/{{user.id}}">
                     <div class="chip">
                         <img src="{{user.image}}" alt="Writer">
                         {{user.name}}
                     </div>
+                    </a>
                 </div>
                 <div class="card-action center-align">
                     <a class="btn grey" href='/stories/show/{{id}}'>Read more >></a>

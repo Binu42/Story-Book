@@ -29,7 +29,9 @@ const{
     truncate,
     stripTags,
     formatDate,
-    select
+    select,
+    admin,
+    editIcon
 } = require('./helper/hbs')
 // mongoose connect
 mongoose.connect(keys.mongoURI, {
@@ -52,7 +54,9 @@ app.engine('handlebars', exphbs({
         truncate: truncate,
         stripTags: stripTags,
         formatDate: formatDate,
-        select: select
+        select: select,
+        admin: admin,
+        editIcon: editIcon
     },
     defaultLayout: 'main'
 }));

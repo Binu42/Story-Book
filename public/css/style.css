@@ -4,6 +4,10 @@ body {
     flex-direction: column;
 }
 
+p{
+    margin: 0;
+}
+
 main {
     flex: 1 0 auto;
 }
@@ -12,24 +16,30 @@ main {
     .side-nav {
         width: 80%;
     }
-    .btn{
+
+    .btn {
         width: 92%;
     }
-    .side-nav li>a{
+
+    .side-nav li>a {
         padding: 0 10px;
+    }
+
+    img.custom-img {
+        height: 150px;
     }
 }
 
-.side-nav li>a>i{
+.side-nav li>a>i {
     margin-right: 5px;
     color: #050505;
 }
 
-.side-nav .fa-github{
+.side-nav .fa-github {
     color: #fbfbfb;
 }
 
-.side-nav .fa-linkedin{
+.side-nav .fa-linkedin {
     color: #00ffdd;
 }
 
@@ -40,39 +50,39 @@ main {
     background-size: cover;
 }
 
-.fa{
+.fa {
     color: black;
 }
 
-.fa-facebook-official{
+.fa-facebook-official {
     color: #1100ff;
 }
 
-.fa-linkedin{
+.fa-linkedin {
     color: #00ffea;
 }
 
-.fa-github{
+.fa-github {
     color: #fbfbfb;
 }
 
-.fa-instagram{
+.fa-instagram {
     color: #fd4902;
 }
 
-.fa-git-square{
+.fa-git-square {
     color: #ffffff;
 }
 
-.footer-icon a{
+.footer-icon a {
     margin-right: 40px;
 }
 
-.margin-login{
+.margin-login {
     margin: 10px;
 }
 
-.alert{
+.alert {
     position: relative;
     padding: .75rem 1.25rem;
     margin: 1rem;
@@ -81,19 +91,19 @@ main {
     text-align: center;
 }
 
-.alert-danger{
+.alert-danger {
     color: #d6172a;
     background-color: #faaeb4;
     border-color: #f5c6cb;
 }
 
-.alert-success{
+.alert-success {
     color: #0a9e0a;
     background-color: #a7f7a7;
     border-color: #69c275f8;
 }
 
-.alert-dismissible{
+.alert-dismissible {
     padding-right: 4rem;
 }
 
@@ -106,13 +116,36 @@ main {
     text-shadow: 0 1px 0 #fff;
 }
 
+.story-header{
+    min-height: 60px;
+}
+
+.user-story--title{
+    min-height: 80px;
+}
+
+.story-body{
+    height: 110px;
+}
+
 .alert-dismissible .close {
     position: absolute;
     top: 0;
     right: 0;
     padding: .75rem 1.25rem;
 }
-button.close{
+
+button.close {
     background-color: transparent;
     border: 0;
+}
+
+#delete-form{
+    display: inline;
+}
+
+@media(max-width: 400px) {
+    nav .brand-logo{
+        font-size: 1.8rem;
+    }
 }
