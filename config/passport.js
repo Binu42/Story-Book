@@ -59,11 +59,11 @@ module.exports = function (passport) {
             profileFields: ['id', 'displayName', 'gender', 'photos', 'emails']
         },
         function (accessToken, refreshToken, profile, cb) {
-            console.log(profile);
             const newUser = {
                 facebookID: profile.id,
                 name: profile.displayName,
-                image: profile.photos[0].value.slice(0, indexOf('?'))
+                email: profile.emails[0].value,
+                image: "https://graph.facebook.com/" + profile.username + "/picture" + "?width=200&height=200" + "&access_token=" + accessToken
             }
 
             User.findOne({
