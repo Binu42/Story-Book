@@ -54,6 +54,7 @@ img {
 }
 
 .sideNavImg img{
+    max-height: none;
     max-width: 100%;
     background-position: center;
     background-size: cover;
