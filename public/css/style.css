@@ -13,7 +13,7 @@ main {
 }
 
 img{
-
+    width: 300px;
     background-size: cover;
     background-position: center;
 }
