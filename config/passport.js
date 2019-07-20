@@ -63,7 +63,7 @@ module.exports = function (passport) {
             const newUser = {
                 facebookID: profile.id,
                 name: profile.displayName,
-                image: profile.photos[0].value
+                image: profile.photos[0].value.slice(0, indexOf('?'))
             }
 
             User.findOne({
