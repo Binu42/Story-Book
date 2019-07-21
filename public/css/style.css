@@ -159,3 +159,9 @@ button.close {
         font-size: 1.8rem;
     }
 }
+
+.card:hover{
+    transform: scale(1.05);
+    transition: all 1s;
+    box-shadow: 0px 0px 5px lightcoral;
+}
