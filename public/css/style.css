@@ -4,7 +4,7 @@ body {
     flex-direction: column;
 }
 
-p{
+p {
     margin: 0;
     font-family: 'Crimson Text', serif;
     font-size: 18px;
@@ -17,7 +17,7 @@ main {
 img {
     max-width: 100%;
     max-height: 100%;
-  }
+}
 
 @media(max-width: 40rem) {
     .side-nav {
@@ -35,7 +35,8 @@ img {
     img.custom-img {
         height: 150px;
     }
-    .card .card-content{
+
+    .card .card-content {
         padding: 10px;
     }
 }
@@ -53,7 +54,7 @@ img {
     color: #00ffdd;
 }
 
-.sideNavImg img{
+.sideNavImg img {
     max-height: none;
     max-width: 100%;
     background-position: center;
@@ -126,15 +127,15 @@ img {
     text-shadow: 0 1px 0 #fff;
 }
 
-.story-header{
+.story-header {
     min-height: 60px;
 }
 
-.user-story--title{
+.user-story--title {
     min-height: 80px;
 }
 
-.story-body{
+.story-body {
     height: 120px;
 }
 
@@ -150,18 +151,33 @@ button.close {
     border: 0;
 }
 
-#delete-form{
+#delete-form {
     display: inline;
 }
 
 @media(max-width: 400px) {
-    nav .brand-logo{
+    nav .brand-logo {
         font-size: 1.8rem;
     }
 }
 
-.card:hover{
-    transform: scale(1.05);
-    transition: all 1s;
-    box-shadow: 0px 0px 5px lightcoral;
+@media(min-width: 800px) {
+    .show:hover {
+        transform: scale(1.005);
+        transition: all 2s;
+        box-shadow: 0px 0px 5px lightcoral;
+    }
+
+    .chip:hover{
+        animation: rotate 2s;
+    }
+
+    @keyframes rotate {
+        from{
+            transform: rotate(5deg);
+        }
+        to{
+            transform: rotate(-5deg);
+        }
+    }
 }
