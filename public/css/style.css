@@ -168,15 +168,16 @@ button.close {
         box-shadow: 0px 0px 5px lightcoral;
     }
 
-    .chip:hover{
+    .chip:hover {
         animation: rotate 2s;
     }
 
     @keyframes rotate {
-        from{
+        from {
             transform: rotate(5deg);
         }
-        to{
+
+        to {
             transform: rotate(-5deg);
         }
     }
