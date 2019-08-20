@@ -132,6 +132,7 @@ img {
 }
 
 .user-story--title {
+    margin-top: 10px;
     min-height: 80px;
 }
 
