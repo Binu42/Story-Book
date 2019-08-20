@@ -160,6 +160,9 @@ button.close {
     nav .brand-logo {
         font-size: 1.8rem;
     }
+    .row .col{
+        padding: 0;
+    }
 }
 
 @media(min-width: 800px) {
