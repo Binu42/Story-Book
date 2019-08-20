@@ -85,6 +85,10 @@ img {
     color: #ffffff;
 }
 
+.fa-google{
+    color: #d11e1e !important;
+}
+
 .footer-icon a {
     margin-right: 40px;
 }
@@ -140,6 +144,10 @@ img {
     height: 120px;
 }
 
+.login-front{
+    margin-top: 40px;
+}
+
 .alert-dismissible .close {
     position: absolute;
     top: 0;
@@ -168,7 +176,7 @@ button.close {
 @media(min-width: 800px) {
     .show:hover {
         transform: scale(1.005);
-        transition: all 2s;
+        transition: all 1s;
         box-shadow: 0px 0px 5px lightcoral;
     }
 
