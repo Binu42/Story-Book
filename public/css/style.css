@@ -168,6 +168,12 @@ button.close {
     display: inline;
 }
 
+footer{
+    background-image: url('../images/wave.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @media(max-width: 400px) {
     nav .brand-logo {
         font-size: 1.8rem;
