@@ -26,11 +26,7 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP: ${{ secrets.HEROKU_APP }}
           CI: true
-        run: |
-          cd client
-          npm install
-          npm run build --if-present
-          cd ..
+        run:
           heroku container:login
           heroku container:push web
           heroku container:release web
